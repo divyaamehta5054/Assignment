@@ -1,0 +1,185 @@
+1. What Is Object Oriented Programming?
+Ans: Object-oriented programming (OOP) is a computer programming model that organizes software design around data,
+ or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and 
+behavior.
+
+OOP focuses on the objects that developers want to manipulate rather than the logic required to manipulate them.
+ This approach to programming is well-suited for programs that are large, complex and actively updated or maintained. 
+This includes programs for manufacturing and design, as well as mobile applications; for example, OOP can be used for
+ manufacturing system simulation software.
+
+
+2. What Are Properties Of Object Oriented Systems? 
+Ans: Inheritance: The main class or the root class is called as a Base Class. Any class which is expected to have ALL properties of the base 
+class along with its own is called as a Derived class. The process of deriving such a class is Derived class. For the “Food” class, a Derived class
+can be “Class Chinesefood”.
+
+Abstraction: Abstraction is creating models or classes of some broad concept. Abstraction can be achieved through Inheritance or 
+even Composition.
+
+Encapsulation: Encapsulation is a collection of functions of a class and object. The “Food” class is an encapsulated form.
+ It is achieved by specifying which class can use which members (private, public, protected) of an object.
+
+Polymorphism: Polymorphism means existing in different forms. Inheritance is an example of Polymorphism. A base class exists in different 
+forms as derived classes. Operator overloading is an example of Polymorphism in which an operator can be applied in different situations.
+
+
+3. What Is Difference Between Class And Interface? 
+Ans. 
+Interface Class:
+*Interface class supports multiple inheritance feature
+*This does not contain a data member.
+*The interface does not allow containers.
+*An interface class only contains incomplete members which refer to the signature of the member.
+*Since everything is assumed to be public, an interface class does not have access modifiers by default.
+*Any member of an interface cannot be static.
+	
+Abstract Class:
+*Abstract class does not support multiple inheritances.
+*Abstract class does contain a data member.
+*The abstract class supports containers.
+*Abstract class contains both incomplete(i.e. abstract) and complete members.
+*An abstract class can contain access modifiers within subs, functions, and properties.
+*Only a complete member of the abstract class can be static.
+
+
+4. What Is Overloading?
+Ans.Overloading refers to the ability to use a single identifier to define multiple methods of a class that differ in their input and output parameters. 
+Overloaded methods are generally used when they conceptually execute the same task but with a slightly different set of parameters.
+
+
+5. What Is T_PAAMAYIM_NEKUDOTAYIM (Scope Resolution Operator (::) with Example
+Ans.The Scope Resolution Operator (also called Paamayim Nekudotayim) or in simpler terms, the double colon, is a token that allows access to static,
+ constant, and overridden properties or methods of a class.
+
+When referencing these items from outside the class definition, use the name of the class.
+
+It's possible to reference the class using a variable. The variable's value can not be a keyword (e.g. self, parent and static).
+ex.<?php
+class MyClass {
+    const CONST_VALUE = 'A constant value';
+}
+
+$classname = 'MyClass';
+echo $classname::CONST_VALUE;
+
+echo MyClass::CONST_VALUE;
+?>
+
+
+6.What are the differences between abstract classes and interfaces? 
+Ans.Abstract class	                                                                 Interface
+1) Abstract class can have abstract and non-abstract methods.	    Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+2) Abstract class doesn't support multiple inheritance.             Interface supports multiple inheritance.
+3) Abstract class can have final, non-final, static and 
+non-static variables.	                                            Interface has only static and final variables.
+4) Abstract class can provide the implementation of interface.	    Interface can't provide the implementation of abstract class.
+5) The abstract keyword is used to declare abstract class.	    The interface keyword is used to declare interface.
+6) An abstract class can extend another Java class and implement 
+multiple Java interfaces.	                                     An interface can extend another Java interface only.
+7) An abstract class can be extended using keyword "extends".	     An interface can be implemented using keyword "implements".
+8) A Java abstract class can have class members like private,
+ protected, etc.	                                             Members of a Java interface are public by default.
+9)Example:                                                         
+ public abstract class shape{                                        Example:
+ public abstract void draw();                                         public interface Drawable{
+ }                                                                    void draw();
+                                                                       }
+
+
+7. Define Constructor and Destructor? 
+Ans.              	Constructor	                                                      Destructor
+1.Constructor helps to initialize the object of a class.	                  Whereas destructor is used to destroy the instances.
+2.It is declared as className( arguments if any ){Constructor’s Body }.           Whereas it is declared as ~ className( no arguments ){ }.
+3.Constructor can either accept arguments or not.	                          While it can’t have any arguments.
+4.A constructor is called when an instance or object of a class is created.	  It is called while object of the class is freed or deleted.
+5.Constructor is used to allocate the memory to an instance or object.     	  While it is used to deallocate the memory of an object of a class.
+6.Constructor can be overloaded.	                                          While it can’t be overloaded.
+7.The constructor’s name is same as the class name.	                          Here, its name is also same as the class name preceded by the tiled (~) operator.
+8.In a class, there can be multiple constructors.	                          While in a class, there is always a single destructor.
+9.There is a concept of copy constructor which is used to initialize an 
+object from another object.	                                                   While here, there is no copy destructor concept.
+10.They are often called in successive order.	                                   They are often called in reverse order of constructor. 
+
+
+8. How to Load Classes in PHP? 
+Ans.PHP load classes are used for declaring its object etc. in object oriented applications. PHP parser loads it automatically, if it is
+registered with spl_autoload_register() function. PHP parser gets the least chance to load class/interface before emitting an error.   
+
+
+9. How to Call Parent Constructor?
+Ans.In order to run a parent constructor, a call to parent::__construct() within the child constructor is required. If the child does
+not define a constructor then it may be inherited from the parent class just like a normal class method (if it was not declared as private).
+$obj = new OtherSubClass(); 
+
+
+10. Are Parent Constructor Called Implicitly When Create An ObjectOf Class?
+Ans.Classes which have a constructor method call this method on each newly-created object, so it is suitable for any initialization that
+the object may need before it is used. Note: Parent constructors are not called implicitly if the child class defines a constructor.      
+
+
+11. What Happen, If Constructor Is Defined As Private Or Protected?
+Ans.The constructor may be made private or protected to prevent it from being called externally. If so, only a static method will be able to
+instantiate the class. Because they are in the same class definition they have access to private methods, even if not of the same object instance.   
+
+
+12. What are PHP Magic Methods/Functions?
+Ans. PHP magic methods are special methods that are called automatically when certain conditions are met. There are several magic methods in  PHP. 
+Every magic method follows certain rules –
+
+*Every magic method starts with a double underscore (  __ ).
+*They are predefined and neither can be created nor removed.
+*Magic methods have reserved names and their name should not be used for other purposes.
+*Magic methods are automatically called when certain criteria are met.    
+__construct()
+__destruct()
+__call($name,$parameter) 
+__toString()
+__get($name)
+__set($name , $value)
+__debugInfo()
+
+
+13. Write program for Static Keyword in PHP?
+Ans.<?php
+class MyClass {
+  public static $str = "Hello World!";
+
+  public static function hello() {
+    echo MyClass::$str;
+  }
+}
+
+echo MyClass::$str;
+echo "<br>";
+echo MyClass::hello();
+?>
+
+
+14. Create multiple Traits and use it in to a single class?
+Ans.<?php
+trait message1 {
+public function msg1() {
+    echo "OOP is fun! ";
+  }
+}
+
+class Welcome {
+  use message1;
+}
+
+$obj = new Welcome();
+$obj->msg1();
+?>
+
+
+15. Write PHP Script of Object Iteration?
+Ans.
+An iterable is any value which can be looped through with a foreach() loop.
+The iterable pseudo-type was introduced in PHP 7.1, and it can be used as a data type for function arguments and function return values.
+The iterable keyword can be used as a data type of a function argument or as the return type of a function.
+
+
+16. Use of The $this keyword
+Ans. $this is a reserved keyword in PHP that refers to the calling object. It is usually the object to which the method belongs, but possibly 
+another object if the method is called statically from the context of a secondary object. This keyword is only applicable to internal methods.
